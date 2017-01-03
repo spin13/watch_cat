@@ -19,7 +19,6 @@ class WatchHandler(FileSystemEventHandler):
         if event.is_directory:
             return
         if getext(event.src_path) in ('.jpg','.png','.txt'):
-            print('%s has been created.' % event.src_path)
             shutil.copy(event.src_path, DEST_DIR)
 
 if __name__ in '__main__':
